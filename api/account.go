@@ -10,7 +10,7 @@ import (
 
 type createAccountRequest struct {
 	Owner    string `json:"owner" binding:"required"`
-	Currency string `json:"currency" binding:"required,oneof=USD EUR"`
+	Currency string `json:"currency" binding:"required,currency"`
 }
 
 func (server *Server) createAccount(ctx *gin.Context) {
@@ -21,9 +21,9 @@ func (server *Server) createAccount(ctx *gin.Context) {
 	}
 
 	arg := db.CreateAccountParams{
-		Owner : req.Owner,
-		Currency : req.Currency,
-		Balance : 0,
+		Owner:    req.Owner,
+		Currency: req.Currency,
+		Balance:  0,
 	}
 
 	account, err := server.store.CreateAccount(ctx, arg)
@@ -60,7 +60,7 @@ func (server *Server) getAccount(ctx *gin.Context) {
 }
 
 type listAccountRequest struct {
-	PageID int32 `form:"page_id" binding:"required,min=1"`
+	PageID   int32 `form:"page_id" binding:"required,min=1"`
 	PageSize int32 `form:"page_size" binding:"required,min=5,max=10"`
 }
 
@@ -72,7 +72,7 @@ func (server *Server) listAccount(ctx *gin.Context) {
 	}
 
 	arg := db.ListAccountsParams{
-		Limit: req.PageSize,
+		Limit:  req.PageSize,
 		Offset: (req.PageID - 1) * req.PageSize,
 	}
 
@@ -98,8 +98,8 @@ func (server *Server) updateAccount(ctx *gin.Context) {
 	}
 
 	arg := db.UpdateAccountParams{
-		ID : req.ID,
-		Balance : req.Balance,
+		ID:      req.ID,
+		Balance: req.Balance,
 	}
 
 	account, err := server.store.UpdateAccount(ctx, arg)
@@ -136,7 +136,7 @@ func (server *Server) deleteAccount(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK,gin.H{
+	ctx.JSON(http.StatusOK, gin.H{
 		"message": "account deleted successfully",
 	})
 }
