@@ -129,7 +129,7 @@ func TestTransferTxDeadLock(t *testing.T) {
 
 	// Channel is designed to connect concurrent Go routines and
 	// allow the to safely share data without explicit locking
-	errs := make(chan error)               // channel to receive errors
+	errs := make(chan error) // channel to receive errors
 
 	for i := 0; i < n; i++ {
 		fromAccountID := account1.ID

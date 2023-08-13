@@ -1,10 +1,12 @@
 # go-lang-masterclass
+
 https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernetes/
 
 ## Docker commands
-### To run psql console in terminal
-`docker exec -it postgres12 psql -U root -d simple_bank`
 
+### To run psql console in terminal
+
+`docker exec -it postgres12 psql -U root -d simple_bank`
 
 ## Useful links
 

@@ -13,7 +13,7 @@ import (
 var testQueries *Queries
 var testDB *sql.DB
 
-func TestMain(m * testing.M) {
+func TestMain(m *testing.M) {
 	config, err := util.LoadConfig("../..")
 	if err != nil {
 		log.Fatal("cannot load config:", err)

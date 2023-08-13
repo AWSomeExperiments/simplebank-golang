@@ -2,6 +2,7 @@ package api
 
 import (
 	"Projects/personal/simple-bank/util"
+
 	"github.com/go-playground/validator/v10"
 )
 

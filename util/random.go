@@ -14,12 +14,11 @@ func init() {
 
 // RandomInt generated a random integer between min and max
 func RandomInt(min, max int64) int64 {
-	return min + rand.Int63n(max - min + 1)
+	return min + rand.Int63n(max-min+1)
 }
 
-
 // RandomString generates a random string of length n
-func RandomString(n int) string{
+func RandomString(n int) string {
 	var sb strings.Builder
 	k := len(alphabet)
 
