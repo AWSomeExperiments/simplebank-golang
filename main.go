@@ -4,11 +4,11 @@ import (
 	"database/sql"
 	"log"
 
+	_ "github.com/lib/pq"
+
 	"Projects/personal/simple-bank/api"
 	db "Projects/personal/simple-bank/db/sqlc"
 	"Projects/personal/simple-bank/util"
-
-	_ "github.com/lib/pq"
 )
 
 func main() {

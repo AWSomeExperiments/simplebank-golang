@@ -1,12 +1,13 @@
 package api
 
 import (
-	db "Projects/personal/simple-bank/db/sqlc"
 	"database/sql"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
+
+	db "Projects/personal/simple-bank/db/sqlc"
 )
 
 type createAccountRequest struct {

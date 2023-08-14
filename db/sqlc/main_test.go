@@ -1,13 +1,14 @@
 package db
 
 import (
-	"Projects/personal/simple-bank/util"
 	"database/sql"
 	"log"
 	"os"
 	"testing"
 
 	_ "github.com/lib/pq"
+
+	"Projects/personal/simple-bank/util"
 )
 
 var testQueries *Queries

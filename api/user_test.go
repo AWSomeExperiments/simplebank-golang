@@ -1,9 +1,6 @@
 package api
 
 import (
-	mockdb "Projects/personal/simple-bank/db/mock"
-	db "Projects/personal/simple-bank/db/sqlc"
-	"Projects/personal/simple-bank/util"
 	"bytes"
 	"database/sql"
 	"encoding/json"
@@ -17,6 +14,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
+
+	mockdb "Projects/personal/simple-bank/db/mock"
+	db "Projects/personal/simple-bank/db/sqlc"
+	"Projects/personal/simple-bank/util"
 )
 
 type eqCreateUserParamsMatcher struct {

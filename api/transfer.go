@@ -1,12 +1,13 @@
 package api
 
 import (
-	db "Projects/personal/simple-bank/db/sqlc"
 	"database/sql"
 	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	db "Projects/personal/simple-bank/db/sqlc"
 )
 
 type transferRequest struct {
