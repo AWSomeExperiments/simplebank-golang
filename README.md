@@ -173,9 +173,62 @@ The programming language used to develop the service is Golang. and the other ba
 
 ## Docker commands
 
-### To run psql console in terminal
+- Run psql console in terminal:
 
-`docker exec -it postgres12 psql -U root -d simple_bank`
+    ```bash
+    docker exec -it postgres12 psql -U root -d simple_bank
+    ```
+- List images:
+
+    ```bash
+    docker images 
+    ```
+- Delete a image
+      
+    ```bash
+    docker rmi <IMAGE ID>
+    ```
+- List containers available locally
+      
+    ```bash
+    docker ps -a
+    ```
+
+- Delete container
+      
+    ```bash
+    docker rm <image name>
+    ``````
+
+- Build a docker image with latest tag
+    ```bash
+    docker build -t simplebank:latest .
+    ```
+
+- To see network setting of image
+    ```bash
+    docker container inspect <image name>
+    ```
+
+- List docker network
+    
+    ```bash
+    docker network ls
+    ```
+
+- Create network
+    
+    ```bash
+    docker network create bank-network
+    docker network connect bank-network postgres12
+    docker network inspect bank-network
+    ```
+
+- Run a docker image with custom network and env variables
+    ```bash
+    docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres12:5432/simple_bank?sslmode=disable" simplebank:latest
+    ```
+
 
 ## Useful links
 
