@@ -176,7 +176,7 @@ The programming language used to develop the service is Golang. and the other ba
 - Run psql console in terminal:
 
     ```bash
-    docker exec -it postgres12 psql -U root -d simple_bank
+    docker exec -it postgres12 psql -U POSTGRES_USER -d simple_bank
     ```
 - List images:
 
@@ -226,7 +226,7 @@ The programming language used to develop the service is Golang. and the other ba
 
 - Run a docker image with custom network and env variables
     ```bash
-    docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres12:5432/simple_bank?sslmode=disable" simplebank:latest
+    docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://POSTGRES_USER:POSTGRES_PASSWORD@postgres12:5432/simple_bank?sslmode=disable" simplebank:latest
     ```
 
 
